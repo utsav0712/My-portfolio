@@ -1,0 +1,90 @@
+.skills-section {
+  background: #0a0f2c;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skills-heading h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #0ea5e9;
+}
+
+.skills-heading .highlight {
+  color: #38bdf8;
+}
+
+.skills-heading .subheading {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+/* Skill Box */
+.skill-box {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving effect (Left → Right) */
+.moving {
+  animation: moveRight 5s linear infinite alternate;
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+/* Hover effect: stop movement and show percentage */
+.hovered {
+  animation: none;
+  background: #0ea5e9;
+  color: #0f172a;
+  transition: all 0.5s ease;
+}
+
+.skill-percent {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid {
+    justify-content: center;
+  }
+  .skill-box {
+    min-width: 100px;
+    padding: 0.8rem 1rem;
+  }
+}
