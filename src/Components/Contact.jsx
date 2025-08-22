@@ -47,7 +47,7 @@ const Contact = () => {
           </p>
           <div className="contact-info">
             <span><FaEnvelope /> utsavgoyal2005@gmail.com</span>
-            <span><FaPhone /> +91 9457991688</span>
+            <span><FaPhone /> +91-9457991688</span>
           </div>
           <div className="contact-socials">
   <a href="https://github.com/utsav0712" target="_blank" rel="noopener noreferrer">
@@ -63,6 +63,7 @@ const Contact = () => {
     <FaLinkedinIn />
   </a>
 </div>
+          
 
         </div>
 
@@ -81,4 +82,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
