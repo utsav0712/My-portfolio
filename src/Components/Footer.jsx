@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import "./Footer.css";
@@ -69,3 +70,28 @@ export default function Footer() {
     </footer>
   );
 }
+=======
+import React from "react";
+import "./Footer.css";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <p>© {new Date().getFullYear()} Utsav Goyal | All Rights Reserved</p>
+        <div className="social-icons">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="mailto:yourmail@example.com">Email</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+>>>>>>> 9dd296d797cacd049637661e8695a64943c087bc

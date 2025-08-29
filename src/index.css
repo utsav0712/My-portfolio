@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ✅ Tailwind base */
 @tailwind base;
 @tailwind components;
@@ -22,3 +23,8 @@ html, body {
 
 html { scroll-behavior: smooth; }
 
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> 9dd296d797cacd049637661e8695a64943c087bc

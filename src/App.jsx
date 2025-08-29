@@ -12,6 +12,7 @@ export default function App() {
     <>
       <Navbar />
       <main>
+<<<<<<< HEAD
         <div id="home">
           <HomeHero />
         </div>
@@ -27,8 +28,19 @@ export default function App() {
         <div id="contact">
           <Contact />
         </div>
+=======
+        <HomeHero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+>>>>>>> 9dd296d797cacd049637661e8695a64943c087bc
       </main>
       <Footer />
     </>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9dd296d797cacd049637661e8695a64943c087bc
