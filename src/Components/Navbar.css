@@ -1,0 +1,170 @@
+/* =============================
+   BASE NAVBAR
+============================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 16px; /* desktop/mobile friendly */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 15, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  box-sizing: border-box;
+  
+}
+
+/* LOGO */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e0ff;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.logo:hover {
+  color: #ff4ecd;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links li a:not(.hire-btn)::after {
+  content: "";
+  position: absolute;
+  /* bottom: -6px; */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00e0ff, #ff4ecd);
+  transition: width 0.3s ease;
+}
+.nav-links li a:not(.hire-btn):hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.nav-links li .active {
+  color: #00e0ff;
+  font-weight: 600;
+}
+.nav-links li .active::after {
+  width: 100%;
+}
+
+/* HIRE ME BUTTON */
+.hire-btnn {
+  padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background: rgb(241, 96, 186);
+    color: #121212;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(240, 136, 205, 0.3);
+}
+.hire-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(88, 229, 248, 0.6);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =============================
+   MOBILE DROPDOWN
+============================= */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%; /* full width for mobile */
+    max-width: 250px;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding-top: 40px;
+    background: rgba(15, 20, 35, 0.95);
+    backdrop-filter: blur(12px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0%);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hire-btn {
+    width: 90%; /* mobile full width */
+    text-align: center;
+    margin: 0;
+  }
+}
+
+/* =============================
+   GLOBAL FIXES
+============================= */
+html, body {
+  overflow-x: hidden; /* horizontal scroll fix */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 70px; /* prevent content behind navbar */
+}
