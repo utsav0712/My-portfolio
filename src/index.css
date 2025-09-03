@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ✅ Tailwind base */
 @tailwind base;
 @tailwind components;
@@ -8,9 +7,8 @@
 * {
   margin: 0;
   padding: 0;
-  
   box-sizing: border-box;
-   max-width: 100vw;
+  max-width: 100vw;
 }
 
 html, body {
@@ -21,10 +19,6 @@ html, body {
   /* font-family: "Poppins", sans-serif; */
 }
 
-html { scroll-behavior: smooth; }
-
-=======
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
->>>>>>> 9dd296d797cacd049637661e8695a64943c087bc
+html {
+  scroll-behavior: smooth;
+}

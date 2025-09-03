@@ -1,19 +1,41 @@
-<<<<<<< HEAD
-import React from "react";
+import React, { useRef } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+
 export default function Footer() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_g9nyicc",   // your service ID
+        "template_s7oarll",  // your template ID
+        form.current,        // form reference
+        "LIwLt1AHVvl3BUm2O"  // your public key
+      )
+      .then(
+        () => {
+          alert("✔️ Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("❌ Failed to send: " + error.text);
+        }
+      );
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
-
         {/* Column 1 - Branding */}
         <div className="footer-brand">
           <div className="logo">UG</div>
           <h2 className="brand-name">Utsav Goyal</h2>
           <p className="brand-text">
-            Passionate Web Developer 🚀 — crafting modern, responsive &
+            Passionate Web Developer 🚀 — crafting modern, responsive & 
             user-friendly digital experiences.
           </p>
           <div className="social-icons">
@@ -24,35 +46,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2 - Links */}
-      {/* <div className="footer-links">
-  <h3>Quick Links</h3>
-  <ul>
-    <li><a href="#home">🏠 Home</a></li>
-    <li><a href="#about">👨‍💻 About</a></li>
-    <li><a href="#skills">⚡ Skills</a></li>
-    <li><a href="#projects">📂 Projects</a></li>
-    <li><a href="#contact">📞 Contact</a></li>
-  </ul>
-</div> */}
-
-        {/* Column 3 - About */}
+        {/* Column 2 - About */}
         <div className="footer-about">
           <h3>About</h3>
           <p>
             I specialize in building clean, high-performance web apps with a
-            focus on **frontend magic ✨** and smooth user experiences.  
+            focus on <b>frontend magic ✨</b> and smooth user experiences.  
             Open for freelance & collaborations.
           </p>
         </div>
 
-        {/* Column 4 - Contact */}
+        {/* Column 3 - Contact */}
         <div className="footer-contact">
           <h3>Get in Touch</h3>
           <p>📧 utsavgoyal2005@gmail.com</p>
           <p>📍 India</p>
-          <form className="contact-formm">
-            <input type="email" placeholder="Enter your email" />
+          <form ref={form} className="contact-formm" onSubmit={sendEmail}>
+            <input type="email" name="user_email" placeholder="Enter your email" required />
             <button type="submit">Contact</button>
           </form>
         </div>
@@ -60,9 +70,7 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>
-          © {new Date().getFullYear()} Utsav Goyal. All Rights Reserved.
-        </p>
+        <p>© {new Date().getFullYear()} Utsav Goyal. All Rights Reserved.</p>
         <p className="made-with">
           Made with <span>❤️</span> & lots of ☕ by Utsav
         </p>
@@ -70,28 +78,3 @@ export default function Footer() {
     </footer>
   );
 }
-=======
-import React from "react";
-import "./Footer.css";
-
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p>© {new Date().getFullYear()} Utsav Goyal | All Rights Reserved</p>
-        <div className="social-icons">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="mailto:yourmail@example.com">Email</a>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
->>>>>>> 9dd296d797cacd049637661e8695a64943c087bc
